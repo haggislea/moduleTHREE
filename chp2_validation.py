@@ -20,44 +20,80 @@ Created on Wed Jan 23 09:27:27 2019
 # VALIDATING STRING CONTENT - own content
 #-----
 
-#postage = input("Would you like your item posted?\n\n Please type yes or no:")
+#print("Would you like your item posted?\n\n Please type yes or no:")
 #
-#print(input("You have declared {}.".format(postage)).UPPER())
+#postageRequired = input()
 #
-#if len(userInput) == 2:
-#    print('correct input')
-#elif userInput == < 0:
-#    print('Incorrect input')
-    
+#while True:
+#    if len(postageRequired) == 3:
+#        print(("You have declared {}.".format(postageRequired)))
+#    
+#else:   
+#        print('This is invalid.\n\n It is a Yes or No answer, thank you.')
+        
+       
 
 #-------
 # TEXT BOOK TASK
 #-------
 
 
+#print('***Please choose an option.....***')
+#print('1. Display my name')
+#print('2. Display my age')
+#print('3. Display my location')
+#
+#choice = input('What choice do you choose?:  ')
+#
+#if choice == 1:
+#    print('Mr Jones')
+#    
+#elif choice == 2:
+#    print('28 years old')
+#    
+#elif choice == 3:
+#    print('Chester')
+#    
+#  
+#choice = 0
+#
+##-------
+## HANDLING ERRORFUL INPUTS
+##-------
+
 print('***Please choose an option.....***')
 print('1. Display my name')
 print('2. Display my age')
-print('1. Display my location')
+print('3. Display my location')
 
-choice = int(input('What choice do you choose?:  '))
+choice = input('What choice do you choose?:  ')
 
-if choice == 1:
-    print('Mr Jones')
+while True: 
+    try:
+        if choice == 1:
+            print('Mr Jones')
     
-elif choice == 2:
-    print('28 years old')
+        elif choice == 2:
+            print('28 years old')
     
-elif choice == 3:
-    print('Chester')
-    
+        elif choice == 3:
+            print('Chester')
+        
+        while choice < 1 or choice >3:
+            choice = int(input('What is your choice?'))
+            break
+        
+    except ValueError:
+        print('Type a number!')
+        
+        
+#class Spam(object):
+#    def __init__(self, description, value):
+#        if not description or value <=0:
+#            raise ValueError
+#        self.description = description
+#        self.value = value
+#            
+#s = Spam('s', 5)
+#print('s', 5)
 
-
-while choice < 1 or choice > 3:
-    choice = int(input('What is your choice? '))
-    
-choice = 0
-
-#-------
-# HANDLING ERRORFUL INPUTS
-#-------
